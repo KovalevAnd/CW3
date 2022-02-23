@@ -8,9 +8,10 @@ from project.views.directors import directors_ns
 from project.views.movies import movies_ns
 from project.views.auth import auth_ns
 from project.views.user import users_ns
+from flask_cors import CORS
 
 api = Api(title="Flask Course Project 3", doc="/docs")
-
+cors = CORS()
 
 def create_app():
     app = Flask(__name__)
