@@ -11,6 +11,9 @@ class UsersService(BaseService):
             raise ItemNotFound
         return UserSchema().dump(user)
 
-    def get_all_movies(self):
+    def get_all_users(self):
         users = UserDAO(self._db_session).get_all()
         return UserSchema(many=True).dump(users)
+
+    def update(self, user_d):
+        return UserDAO(self._db_session).update(user_d)

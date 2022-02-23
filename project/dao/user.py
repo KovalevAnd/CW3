@@ -12,3 +12,13 @@ class UserDAO:
 
     def get_all(self):
         return self._db_session.query(User).all()
+
+    def update(self, user_d):
+        user = self.get_by_id(user_d.get("id"))
+        user.name = user_d.get("name")
+        user.surname = user_d.get("surname")
+        user.email = user_d.get("email")
+        user.favorite_genre = user_d.get("favorite_genre")
+        user.password = user_d.get("password")
+        self._db_session.add(user)
+        self._db_session.commit()

@@ -1,5 +1,6 @@
 from project.dao.models.genre import Genre
 from project.dao.models.director import Director
+from project.dao.models.user import User
 from project.server import db#, create_app
 from f import create_app
 
@@ -12,4 +13,6 @@ def shell():
         "db": db,
         "Genre": Genre,
         "Director": Director,
+        "User": User,
+
     }
